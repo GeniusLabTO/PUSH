@@ -1,3 +1,3 @@
-# My First Rails Project
+# My Social Reading List
 
-This is a pinterest-type application based on the [*One Month*](http://onemonthrails.com) Rails course and adapted for practice purposes.
+This is a rails application application based on the [*One Month*](http://onemonthrails.com) Rails course to help me keep tabs on the books my friends and I read.
