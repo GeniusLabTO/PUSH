@@ -5,11 +5,12 @@
     <div class="box panel panel-default">
       <%= link_to image_tag(pin.image.url(:medium)), pin %>
       <div class="panel-body">
-        <%= pin.description %><br/>
-        <strong><%= pin.user.name if pin.user %></strong>
-        <% if pin.user == current_user %>
-        <div class="actions">
-              <%= link_to edit_pin_path(pin) do %>
+        <p><%= pin.description %></p>
+        <p><strong><%= pin.user.name if pin.user %></strong></p>
+        
+        <% if current_user && pin.user == current_user %>
+          <div class="actions">
+            <%= link_to edit_pin_path(pin) do %>
               <span class="glyphicon glyphicon-edit"></span>
               Edit
             <% end %>
@@ -17,14 +18,14 @@
               <span class="glyphicon glyphicon-trash"></span>
               Delete
             <% end %>
-        </div> <!-- .actions -->
-          <% end %>
+          </div>
+        <% end %>
         
-      </div> <!-- .panel-body -->
-    </div> <!-- .box .panel .panel-defaul-->
+      </div>
+    </div>
   <% end %>
-</div> <!-- #pins .transitions-enabled-->
+</div>
 
 <div class="center">
-   <%= will_paginate @pins, renderer: BootstrapPagination::Rails %>
+  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 </div>
